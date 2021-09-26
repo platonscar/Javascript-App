@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link bootstrap -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap.min.css">
-
     <!-- link css -->
     <link rel="stylesheet" href="style.css">
     <!-- Font -->
@@ -20,18 +19,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- icons -->
     <script src="https://kit.fontawesome.com/e6497ee90f.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="app.js"></script>
-    <title>Platondedign</title>
+    <title>App anime</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a href="http://" class="navbar-brand">
-           ANIME app
-        </a>
-    </nav>
+    <header>
+        <nav class="navbar navbar-light bg-light" id="loginName">
+        </nav>
+    </header>
     <main class="container">
         <section id="app" class="row pt-5" >
+                
+                    <label for="register">Please sing in here!</label>
+                    <input type="text" id="register" placeholder="Username" class="form-control mb-3">
+                    <button class="btn btn-primary" id="buttonLogin" onclick="login()">Login</button>
+               
             <article class="col-md-4">
                 <div class="card">
                     <div class="card-header">
@@ -46,16 +51,18 @@
                         </div>
                         <div class="form-group">
                             <label for="year">Year of broadcast:</label>
-                            <input type="number" id="year" class="form-control mb-3">
+                            <input type="month" id="year" class="form-control mb-3">
                         </div>
                         <input type="submit" value="Add" class="btn btn-primary btn-block">
                     </form>
+                    
                 </div>
             </article>
             <article class="col-md-8">
-                <div id="anime_list"></div>
+                <section id="anime_list"></section>
             </article>
         </section>
+        
     </main>
 </body>
 
