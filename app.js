@@ -23,7 +23,7 @@ class UI {
                 </div>
             </div>`;
                 let button = document.createElement('button');
-                button.classList.add('btn', 'btn-danger');
+                button.classList.add('btn');
                 button.name = index;
                 button.innerHTML = 'Delete';
                 button.addEventListener('click', () => {
@@ -93,13 +93,21 @@ function borrar(e) {
 // ----- login -----
 let register = document.getElementById('register');
 let loginName = document.getElementById('loginName');
+const signIn =  $("#signIn");
+
 function login(){
     let p = document.createElement('p');
     p.classList.add('welcome');
-    p.innerHTML = `Welcome ${register.value}, good to see you here <i class="far fa-heart"></i>!` ;
+    p.innerHTML = `Welcome ${register.value}, good to see you here&nbsp;<i class="far fa-heart icon_heart"></i>!` ;
     loginName.appendChild(p);
-    // if(p != register.value ){
-       
-    // }
-
+    $("#signIn").slideUp("fast");
 }
+$(document).ready(function(){
+    function heartAnimation(){
+        $(".icon_heart").removeClass("far fa-heart").addClass("far fa-smile-beam");
+        setTimeout(function(){
+            $(".icon_heart").removeClass("far fa-smile-beam").addClass("far fa-heart");
+        }, 500)
+    };
+    setInterval(heartAnimation, 1000) ;
+});
