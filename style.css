@@ -6,48 +6,55 @@
 }
 /* ----- HEADER ----- */
 header {
-    width: 70%;
-    height: 50%;   
-    margin: 0 auto;
-    border-bottom: 2px solid #F3BFD3;
+    /* border-bottom: 2px solid #F3BFD3; */
+    /* text-decoration-color: #F3E4C2 */
+    margin-bottom: 50px;
 }
-.logo {
-    padding-bottom: 12px;
-}
-.wrapper_nav {
+.form_container{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
-    align-items: center;
+    flex-direction: column;
+    margin-left: 85%;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
-#menu-input {
-    display: none;
+.form_login-label,.form_login-register {
+    margin-bottom: 5px;
 }
-.nav_menu {
-    margin: 0 auto;
-    padding: 10px;
-}
-.nav_menu, .nav_list{    
-    list-style: none;
+.welcome {
     display: flex;
-    margin: 0 25px;
+    justify-content: center;
+    color: #F3BFD3;
+    font-size: 1.5rem;
 }
-a {
-    color: #000000;
-    font-size: 20px;
-    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
-    transition: text-decoration-color 300ms;
+.btn {
+    border-radius: 10px;
+    width: 80px;
+    height: 22px;
+    background-color: #F3E4C2;
+    cursor: pointer;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.03);
+    outline: none;
+    border: none;
 }
-a:hover {
-    text-decoration-color: #F3E4C2;
-    color: inherit;
+.form_control{
+    border-radius: 10px ;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
 }
-/* ----------------- */
-.container_principal {
+.section_container {
+    width: 100%;
     display: flex;
-    
+    justify-content: center;
 }
-.container_img{
-    display: flex;
-    flex-direction: row;
-} 
+.card-header{
+    margin-bottom: 25px;
+}
+hr {
+    border: 1px solid #F3BFD3;
+    margin-top: 5px;
+}
+.form_group {
+    margin-bottom: 10px;
+}

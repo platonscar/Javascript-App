@@ -5,65 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css"> -->
     <!-- link css -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <!-- css animation -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- icons -->
     <script src="https://kit.fontawesome.com/e6497ee90f.js" crossorigin="anonymous"></script>
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- script -->
     <script defer src="app.js"></script>
     <title>App anime</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-light bg-light" id="loginName">
-        </nav>
+        <section class="form_container">
+            <div class="form_login">
+                <div class="form_login-register">
+                    <div class="form_login-label">
+                        <label for="register">Please sing in here!</label>
+                    </div>
+                    <div class="form_login-input">
+                        <input type="text" id="register" placeholder="Username" class="form_control">
+                    </div>
+                </div>
+            </div>
+            <div class="form_login-button">
+                <button class="btn" id="buttonLogin" onclick="login()">Log In</button>
+                <button class="btn" id="buttonLogout" onclick="logout()">Log Out</button>
+
+            </div>
+        </section>
+        <div class="loginName" id="loginName"></div>
     </header>
-    <main class="container">
-        <section id="app" class="row pt-5" >
-                
-                    <label for="register">Please sing in here!</label>
-                    <input type="text" id="register" placeholder="Username" class="form-control mb-3">
-                    <button class="btn btn-primary" id="buttonLogin" onclick="login()">Login</button>
-               
-            <article class="col-md-4">
-                <div class="card">
+    <main class="main_container">
+        <section id="app" class="section_container">
+                <article class="card">
                     <div class="card-header">
                         <h3>Add your anime recommendation!</h3>
+                        <hr>
                     </div>
-                    <form id="product_form" class="card-body">
-                        <div class="form-group">
-                            <input type="text" name="name" id="name" placeholder="Anime name" class="form-control mb-3">
+                    <form id="product_form" class="card_body">
+                        <div class="form_group">
+                            <input type="text" name="name" id="name" placeholder="Anime name" class="form_control">
                         </div>
-                        <div class="form-group">
-                            <input type="text" id="gender" placeholder="Anime gender" class="form-control mb-3">
+                        <div class="form_group">
+                            <input type="text" id="gender" placeholder="Anime gender" class="form_control">
                         </div>
-                        <div class="form-group">
-                            <label for="year">Year of broadcast:</label>
-                            <input type="month" id="year" class="form-control mb-3">
+                        <div class="form_group">
+                            <p>
+                                <label for="year">Year of broadcast:</label>
+                            </p>
+                            <input type="month" id="year" class="form_control">
                         </div>
                         <input type="submit" value="Add" class="btn btn-primary btn-block">
                     </form>
-                    
-                </div>
-            </article>
-            <article class="col-md-8">
-                <section id="anime_list"></section>
-            </article>
+                </article>
         </section>
-        
+        <section class="section_anime">
+            <article id="anime_list"></article>
+        </section>
     </main>
 </body>
-
 </html>

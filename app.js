@@ -15,8 +15,8 @@ class UI {
                 let element = document.createElement('div');
                 element.id = index;
                 element.innerHTML += `
-            <div class="card text-center mb-4">
-                <div class="card-body">
+            <div class="card">
+                <div class="card_body">
                     <strong>Anime Name</strong>: ${anime.name1}
                     <strong>Anime Gender</strong>: ${anime.gender}
                     <strong>Anime Year</strong>: ${anime.year}
@@ -95,6 +95,11 @@ let register = document.getElementById('register');
 let loginName = document.getElementById('loginName');
 function login(){
     let p = document.createElement('p');
-    p.innerHTML = register.value;
+    p.classList.add('welcome');
+    p.innerHTML = `Welcome ${register.value}, good to see you here <i class="far fa-heart"></i>!` ;
     loginName.appendChild(p);
+    // if(p != register.value ){
+       
+    // }
+
 }
