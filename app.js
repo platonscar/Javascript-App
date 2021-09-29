@@ -93,21 +93,41 @@ function borrar(e) {
 // ----- login -----
 let register = document.getElementById('register');
 let loginName = document.getElementById('loginName');
-const signIn =  $("#signIn");
+let elementP = document.getElementsByClassName('welcome');
+const signIn = $("#signIn");
 
-function login(){
-    let p = document.createElement('p');
+function login() {
+    let p = document.getElementById('loginName');
     p.classList.add('welcome');
-    p.innerHTML = `Welcome ${register.value}, good to see you here&nbsp;<i class="far fa-heart icon_heart"></i>!` ;
-    loginName.appendChild(p);
+    p.innerHTML = "";
+    p.innerHTML = `Welcome ${register.value}, good to see you here&nbsp;<i class="far fa-heart icon_heart"></i>!`;
     $("#signIn").slideUp("fast");
-}
-$(document).ready(function(){
-    function heartAnimation(){
+};
+
+
+// ----- corazón y carita -----
+$(document).ready(function () {
+    function heartAnimation() {
         $(".icon_heart").removeClass("far fa-heart").addClass("far fa-smile-beam");
-        setTimeout(function(){
+        setTimeout(function () {
             $(".icon_heart").removeClass("far fa-smile-beam").addClass("far fa-heart");
         }, 500)
     };
-    setInterval(heartAnimation, 1000) ;
+    setInterval(heartAnimation, 1000);
 });
+
+// ----- fetch -----
+let animeQuotes = document.getElementById("anime_quotes");
+const buttonAnime = document.getElementById("btn");
+
+function getQuote() {
+    fetch('animeQuotes.json') /*https://animechan.vercel.app */
+    .then(response => response.json())
+    .then(data => { data.forEach( element =>{
+        animeQuotes.innerHTML = `${element.character}, once said ${element.quote}`
+    })
+        
+        // console.log(data.quote)
+        
+    });
+}; 

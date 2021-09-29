@@ -22,6 +22,10 @@
 
 <body>
     <header>
+        <aside id="anime_section">
+            <p id="anime_quotes">Rock Lee once said "So I Was Not Born With A Whole Lot Of Natural Talent... But I Work Hard And I Never Give Up. That Is My Gift. That Is MY Ninja Way!."</p>
+            <input type="button" value="New quote!" class="btn" id="btn" onclick="getQuote()">
+        </aside>
         <section class="form_container">
             <div class="form_login">
                 <div class="form_login-register">
@@ -29,7 +33,7 @@
                         <label for="register" id="signIn">Please sing in here!</label>
                     </div>
                     <div class="form_login-input">
-                        <input type="text" id="register" placeholder="Username" class="form_control">
+                        <input type="text" id="register" placeholder="Username" class="form_control" required>
                     </div>
                 </div>
             </div>
@@ -49,18 +53,18 @@
                     </div>
                     <form id="product_form" class="card_body">
                         <div class="form_group">
-                            <input type="text" name="name" id="name" placeholder="Anime name" class="form_control">
+                            <input type="text" name="name" id="name" placeholder="Anime name" class="form_control" required>
                         </div>
                         <div class="form_group">
-                            <input type="text" id="gender" placeholder="Anime gender" class="form_control">
+                            <input type="text" id="gender" placeholder="Anime gender" class="form_control" required>
                         </div>
                         <div class="form_group">
                             <p>
                                 <label for="year">Year of broadcast:</label>
                             </p>
-                            <input type="month" id="year" class="form_control">
+                            <input type="month" id="year" class="form_control" required>
                         </div>
-                        <input type="submit" value="Add" class="btn btn-primary btn-block">
+                        <input type="submit" value="Add" class="btn btn-primary btn-block" required>
                     </form>
                 </article>
         </section>
