@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link bootstrap -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap.min.css"> -->
     <!-- link css -->
     <link rel="stylesheet" href="style.css">
     <!-- icons -->
@@ -23,8 +19,10 @@
 <body>
     <header>
         <aside id="anime_section">
-            <p id="anime_quotes">Rock Lee once said "So I Was Not Born With A Whole Lot Of Natural Talent... But I Work Hard And I Never Give Up. That Is My Gift. That Is MY Ninja Way!."</p>
-            <input type="button" value="New quote!" class="btn" id="btn" onclick="getQuote()">
+            <p id="anime_quotes">Rock Lee from Naruto once said: So I Was Not Born With A Whole Lot Of Natural Talent... But I Work Hard And I Never Give Up. That Is My Gift. That Is MY Ninja Way!.</p> 
+            <div class="button_quotes">
+                <input type="button" value="New quote!" class="btn quotes_b" id="btn" onclick="getQuote()">
+            </div>
         </aside>
         <section class="form_container">
             <div class="form_login">
@@ -38,8 +36,8 @@
                 </div>
             </div>
             <div class="form_login-button">
-                <button class="btn" id="buttonLogin" onclick="login()">Log In</button>
-                <!-- <button class="btn" id="buttonLogout" onclick="logout()">Log Out</button> -->
+                <button class="btn " id="buttonLogin" onclick="login()">Log In</button>
+                <button class="btn hidden" id="buttonLogout" onclick="logout()">Log Out</button>
             </div>
         </section>
         <div class="loginName" id="loginName"></div>

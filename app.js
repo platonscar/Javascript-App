@@ -87,7 +87,6 @@ function borrar(e) {
     const filtrados = animes.filter((item, index) => index != e.target.name)
     const ui = new UI();
     ui.drawAnime(filtrados);
-    // ui.deleteAnime(e.target);
 };
 
 // ----- login -----
@@ -98,12 +97,23 @@ const signIn = $("#signIn");
 
 function login() {
     let p = document.getElementById('loginName');
+    let buttonLogin = document.getElementById("buttonLogin");
+    let buttonLogout = document.getElementById("buttonLogout");
+    buttonLogin.style.display = "none";
+    register.style.display = "none";
+    buttonLogout.style.display = "block";
     p.classList.add('welcome');
-    p.innerHTML = "";
     p.innerHTML = `Welcome ${register.value}, good to see you here&nbsp;<i class="far fa-heart icon_heart"></i>!`;
     $("#signIn").slideUp("fast");
 };
-
+function logout() {
+    buttonLogin.style.display = "block";
+    buttonLogout.style.display = "none";
+    register.style.display = "block";
+    register.value = ""
+    let p = document.getElementById('loginName');
+    p.innerHTML = "";
+}
 
 // ----- corazón y carita -----
 $(document).ready(function () {
@@ -120,14 +130,23 @@ $(document).ready(function () {
 let animeQuotes = document.getElementById("anime_quotes");
 const buttonAnime = document.getElementById("btn");
 
+// ----- forma con url api -----
 function getQuote() {
-    fetch('animeQuotes.json') /*https://animechan.vercel.app */
-    .then(response => response.json())
-    .then(data => { data.forEach( element =>{
-        animeQuotes.innerHTML = `${element.character}, once said ${element.quote}`
-    })
-        
-        // console.log(data.quote)
-        
-    });
-}; 
+    fetch('https://animechan.vercel.app/api/random') /*https://animechan.vercel.app */
+        .then(response => response.json())
+        .then(data => {
+                animeQuotes.innerHTML = `${data.character} from ${data.anime}, once said: ${data.quote}`
+        });
+};
+ 
+// ----- forma con json -----
+
+// function getQuote() {
+//     fetch('animeQuotes.json')
+//         .then(response => response.json())
+//         .then(data => {
+//             const randomSelection = Math.floor(Math.random() * (data.length -1));
+//             animeQuotes.innerHTML = `${data[randomSelection].character}, once said ${data[randomSelection].quote}`
+//         });
+// };
+
